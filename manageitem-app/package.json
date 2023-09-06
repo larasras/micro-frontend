@@ -1,5 +1,5 @@
 {
-  "name": "@Org79/customer-app",
+  "name": "@Org79/manageitem-app",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
