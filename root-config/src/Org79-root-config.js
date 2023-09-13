@@ -1,20 +1,42 @@
+// import { registerApplication, start } from "single-spa";
+// import {
+//   constructApplications,
+//   constructRoutes,
+//   constructLayoutEngine,
+// } from "single-spa-layout";
+// import microfrontendLayout from "./microfrontend-layout.html";
+
+// const routes = constructRoutes(microfrontendLayout);
+// const applications = constructApplications({
+//   routes,
+//   loadApp({ name }) {
+//     return System.import(name);
+//   },
+// });
+// const layoutEngine = constructLayoutEngine({ routes, applications });
+
+// applications.forEach(registerApplication);
+// layoutEngine.activate();
+// start();
 import { registerApplication, start } from "single-spa";
-import {
-  constructApplications,
-  constructRoutes,
-  constructLayoutEngine,
-} from "single-spa-layout";
-import microfrontendLayout from "./microfrontend-layout.html";
+import * as isActive from "./activity-functions";
 
-const routes = constructRoutes(microfrontendLayout);
-const applications = constructApplications({
-  routes,
-  loadApp({ name }) {
-    return System.import(name);
-  },
-});
-const layoutEngine = constructLayoutEngine({ routes, applications });
+registerApplication(
+  "@Org79/navbar-app",
+  () => System.import("@Org79/navbar-app"),
+  isActive.nav
+);
 
-applications.forEach(registerApplication);
-layoutEngine.activate();
+registerApplication(
+  "@Org79/signup-app",
+  () => System.import("@Org79/signup-app"),
+  isActive.page1
+);
+
+registerApplication(
+  "@Org79/manageitem-app",
+  () => System.import("@Org79/manageitem-app"),
+  isActive.page2
+);
+
 start();
