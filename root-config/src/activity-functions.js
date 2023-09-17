@@ -9,10 +9,10 @@ export function nav() {
     return true;
 }
 
-export function page1(location) {
-    return prefix(location, 'page1');
+export function signUp(location) {
+    return prefix(location, 'sign-up');
 }
 
-export function page2(location) {
-    return prefix(location, 'page2');
+export function manageItem(location) {
+    return prefix(location, 'manage-item');
 }

@@ -30,13 +30,13 @@ registerApplication(
 registerApplication(
   "@Org79/signup-app",
   () => System.import("@Org79/signup-app"),
-  isActive.page1
+  isActive.signUp
 );
 
 registerApplication(
   "@Org79/manageitem-app",
   () => System.import("@Org79/manageitem-app"),
-  isActive.page2
+  isActive.manageItem
 );
 
 start();
